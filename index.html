@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #ff6699;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        header {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-align: center;
+            cursor: url('png'), auto; /* Custom cursor */
+        }
+
+        #bgVideo {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        button {
+            padding: 15px 25px;
+            font-size: 1.4em;
+            cursor: pointer;
+            border: none;
+            border-radius: 8px;
+            outline: none;
+            background-color: #ff4d4d;
+            color: #fff;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #cc0000;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            color: #fff;
+        }
+
+        #proposalVideo, #rejectionVideo {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+    <video id="bgVideo" autoplay muted loop disableRemotePlayback>
+        <source src="Falling Heart Background hd.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <video id="proposalVideo" controls playsinline>
+        <source src="love.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <video id="rejectionVideo" controls playsinline>
+        <source src="Thukra Ke Mera pyar Mera Inteqam Dekhegi Status _ Mera Inteqam Dekhegi Status(1080P_HD) new 2020.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <header>
+        <div>
+            <h1>Will you be my Valentine?</h1>
+            <div class="buttons">
+                <button onclick="respond('Yes')">Yes</button>
+                <button onclick="respond('No')">No</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="footer">
+        <p>Created with love by Prasad Shaswat</p>
+    </div>
+
+    <script>
+        function respond(answer) {
+            if (answer === 'Yes') {
+                // Hide the header and show the proposal video
+                document.querySelector('header').style.display = 'none';
+                document.querySelector('#proposalVideo').style.display = 'block';
+            } else {
+                // Hide the header and show the rejection video
+                document.querySelector('header').style.display = 'none';
+                document.querySelector('#rejectionVideo').style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
